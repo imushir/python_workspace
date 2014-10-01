@@ -1,1 +1,10 @@
-DELSTRTranseint_response.multiorder_tf
+INSTUPTranseint_response.transient
+/home/mushirahmed/python_workspace/Sandhi/Transeint_response/transient.py
+INFOS:&&3|1|2|0&&3|3|2|0&&3|4|2|0&&3|5|2|0&&3|6|2|0&&3|5|2|0&&3|6|2|0&&3|5|2|0&&3|7|2|0
+num=1
+t=5
+s=6
+tf=4
+den=3
+Transeint_response.transient=2
+i=7

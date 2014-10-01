@@ -59,8 +59,8 @@ class multiorder_tf(gras.Block):
 
     def work(self, input_items, output_items):
         
-      in0  = input_items[:] 
-      out0 = output_items[:]
+      in0  = input_items[:1] 
+      out0 = output_items[:1]
     
             # <+signal processing here+>
 	#from multiorder_tf_sci import csim	
@@ -77,9 +77,9 @@ class multiorder_tf(gras.Block):
  
 # get t = time, s = unit-step response
       #t, s = step(tf)
-      out0[:] = step(tf)
-      self.consume(0,len(in0));
-      self.produce(0,len(out0));
+      out0[0:] = step(tf)
+      self.consume(0,1);
+      self.produce(0,1)
       
       
            

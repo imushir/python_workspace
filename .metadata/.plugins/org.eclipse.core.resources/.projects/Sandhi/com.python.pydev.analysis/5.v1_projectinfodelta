@@ -1,1 +1,12 @@
-DELSTRTranseint_response.multiorder_tf
+INSTUPTranseint_response.step_response
+/home/mushirahmed/python_workspace/Sandhi/Transeint_response/step_response.py
+INFOS:&&3|1|2|0&&3|3|2|0&&3|4|2|0&&3|5|2|0&&3|6|2|0&&3|7|2|0&&3|8|2|0&&2|9|2|0
+G=5
+s=1
+stepResponse=9
+G2=4
+G1=3
+Transeint_response.step_response=2
+H=7
+ans=6
+Tf=8
