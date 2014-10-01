@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<block>
+  <name>GRC</name>
+  <key>grc</key>
+  <category>GRC</category> 
+  <import>import gnuradio.Generator</import>
+  <make>gnuradio.Generator.Generator()
+self.$(id).get_file_path()</make>
+  <!-- Make one 'param' node for every Parameter you want settable from the GUI.
+       Sub-nodes:
+       * name
+       * key (makes the value accessible as $keyname, e.g. in the make node)
+       * type -->
+  <!--<param>
+    <name>Path of the File</name>
+    <key>path</key>
+    <value>""</value>
+    <type>string</type>
+  </param>-->
+  <param>
+      <name>Choose .grc File</name>
+      <key>file</key>
+      <value></value>
+      <type>file_open</type>
+  </param>
+  <param>
+    <name>Window Size</name>
+    <key>window</key>
+    <value>1</value>
+    <type>int</type>
+  </param>
+  <!--<param>
+     <name>Name of Scilab Variable</name>
+     <key>var_name</key>
+     <value>""</value>
+     <type>string</type>
+   </param> -->
+
+  <!-- Make one 'sink' node per input. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
+  <!--<sink>
+    <name>in</name>
+    <type>float</type>
+  </sink>-->
+
+  <!-- Make one 'source' node per output. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
+  <source>
+    <name>out</name>
+    <type>float</type>
+  </source>
+</block>

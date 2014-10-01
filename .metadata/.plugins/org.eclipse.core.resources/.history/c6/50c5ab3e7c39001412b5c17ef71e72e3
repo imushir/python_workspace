@@ -1,0 +1,16 @@
+from PyQt4 import Qt
+from gnuradio import qtgui,gr,self
+import sys, sip
+
+class grclass(gr.top_block):
+    self.snk = qtgui.sink_c(1024, #fftsize
+    samp_rate, #bw
+    "QT GUI Plot") #name
+    self.snk_win = sip.wrapinstance(self.snk.pyqwidget(), Qt.QWidget)
+    self.snk_win.show()
+def main():
+    qapp = Qt.QApplication(sys.argv)
+    tb = grclass()
+    tb.start()
+    qapp.exec_()
+    tb.stop()
