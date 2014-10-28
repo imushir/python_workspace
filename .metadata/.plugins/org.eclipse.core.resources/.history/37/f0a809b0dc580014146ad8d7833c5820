@@ -1,0 +1,4 @@
+import pylab as pl
+t = pl.linspace(-pl.pi, pl.pi, 10000)
+y = -t+3*pl.cos(2*t)
+pl.plot(t,y)

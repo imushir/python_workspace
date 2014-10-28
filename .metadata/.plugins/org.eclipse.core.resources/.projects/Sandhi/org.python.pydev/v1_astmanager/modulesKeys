@@ -27,8 +27,14 @@ NumPyDemo.demo1|/home/mushirahmed/python_workspace/Sandhi/NumPyDemo/demo1.py
 NumPyDemo.numpyex1|/home/mushirahmed/python_workspace/Sandhi/NumPyDemo/numpyex1.py
 Pole_Zero.pole_zero1|/home/mushirahmed/python_workspace/Sandhi/Pole_Zero/pole_zero1.py
 Pole_Zero.pole_zero1_test|/home/mushirahmed/python_workspace/Sandhi/Pole_Zero/pole_zero1_test.py
+Pylab.ex1|/home/mushirahmed/python_workspace/Sandhi/Pylab/ex1.py
 Scilab_fileExec.file_sci|/home/mushirahmed/python_workspace/Sandhi/Scilab_fileExec/file_sci.py
+Transeint_response.expo|/home/mushirahmed/python_workspace/Sandhi/Transeint_response/expo.py
 Transeint_response.multiorder_tf|/home/mushirahmed/python_workspace/Sandhi/Transeint_response/multiorder_tf.py
+Transeint_response.multiorder_tf_2|/home/mushirahmed/python_workspace/Sandhi/Transeint_response/multiorder_tf_2.py
 Transeint_response.step_response|/home/mushirahmed/python_workspace/Sandhi/Transeint_response/step_response.py
 Transeint_response.step_response3|/home/mushirahmed/python_workspace/Sandhi/Transeint_response/step_response3.py
 Transeint_response.transient|/home/mushirahmed/python_workspace/Sandhi/Transeint_response/transient.py
+Transeint_response.ztransform|/home/mushirahmed/python_workspace/Sandhi/Transeint_response/ztransform.py
+multiorder_tf|/home/mushirahmed/python_workspace/Sandhi/multiorder_tf.py
+multiorder_tf_sci|/home/mushirahmed/python_workspace/Sandhi/multiorder_tf_sci.py

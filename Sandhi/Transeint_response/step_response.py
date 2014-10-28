@@ -33,7 +33,7 @@ def stepResponse(Ts):
         i10 = next(i for i in range(0,len(y)-1) if y[i]>=y[-1]*.10)
         Tr = round(t[next(i for i in range(i10,len(y)-1) if y[i]>=y[-1]*.90)]-t[i10],2)
     except StopIteration:
-       Tr = "unknown"
+        Tr = "unknown"
     try:
         Ts = round(t[next(len(y)-i for i in range(2,len(y)-1) if abs(y[-i]/y[-1])>1.02)]-t[0],2)
     except StopIteration:

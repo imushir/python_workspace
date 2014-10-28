@@ -1,0 +1,2 @@
+import pylab as pl
+t = pl.linspace(-p1.pi, p1.pi, 10000)
