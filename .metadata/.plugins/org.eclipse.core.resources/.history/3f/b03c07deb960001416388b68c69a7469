@@ -1,0 +1,9 @@
+def yield_times():
+    from datetime import date, time, datetime, timedelta
+    start = datetime.combine(date.today(), time(0, 0))
+    yield start.strftime("%H:%M:%S")
+    while True:
+        start += timedelta(seconds=7)
+        yield start.strftime("%H:%M:%S")
+gen = yield_times()
+print(gen)

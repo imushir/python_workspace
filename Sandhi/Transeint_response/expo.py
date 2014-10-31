@@ -32,34 +32,94 @@ class expo(gras.Block):
             in_sig=[numpy.float32],
             out_sig=[numpy.float32])
 
-    def set_parameters(self,q,e,wd):
-        self.sigma=q
-        self.zita=e
-        self.freq=wd
+    def set_parameters(self,g,a,b):
+        self.gama=g
+        self.alpha=a
+        self.beta=b
+    def yield_times(self):
+        from datetime import date, time, datetime, timedelta
+        start = datetime.combine(date.today(), time(0, 0))
+        yield start.strftime("%H:%M:%S")
+        while True:
+            start += timedelta(seconds=7)
+            yield start.strftime("%H:%M:%S")   
     
     def work(self, input_items, output_items):
         in0 = input_items[0]
         out = output_items[0]
+    
         o1 = []
         o2 = []
         o3 = []
         o4 = []
         ans = []
-        o1 = 1
-       
-        #o2 = -numpy.exp(-2*in0[0:1])
-        #o3 = -numpy.exp(-3*in0[0:1])
-    
+        mul = []
         
-        o2=numpy.exp(-in0[0:1]*self.sigma)
-        o3=numpy.sin((self.freq*in0[0:1])+(self.sigma))
-        o4=numpy.sqrt(o1-numpy.square(self.zita))
-        ans.append(o1-((o2*o3)/o4))
-        #ans.append(o1-((numpy.exp(-in0[0:1]*self.sigma)*(numpy.sin((self.freq*in0[0:1])+(self.sigma))))/numpy.sqrt(o1-numpy.square(self.zita))))
-        out[0:1] = ans
-         
+        o1 = (self.gama)/(self.alpha*self.beta)
+        print("o1 : ", o1)
+        o2 = ((self.gama)*(-numpy.exp(self.alpha*in0[0:1])))/(self.alpha*(self.beta-self.alpha))
+        print("o2 : ",o2)
+        o3 = ((self.gama)*(-numpy.exp(self.beta*in0[0:1])))/(self.beta*(self.alpha-self.beta))
+        print("o3 : ",o3)
+        ans.append(o1-o2-o3)
+        
+        
+        for ii in range(5):
+            #print gen.next()
+            out[0:1] = ans
+        
         
         self.consume(0,1)
         self.produce(0,1)
-        #return len(output_items[0])
+        
+        
+        #o2 = -numpy.exp(-2*in0[0:1])
+        #o3 = -numpy.exp(-3*in0[0:1])
+        #o2=numpy.exp(-(in0[0:1]*self.sigma))
+        #print("o2 :",o2)
+        #o3=numpy.sin((self.freq*in0[0:1])+(self.sigma))
+        #print("o3 :",o3)
+        #o4=numpy.sqrt(o1-numpy.square(self.zita))
+        #print("o4 :",o4)
+            
+        """"a = [1,2,3,4]
+            b = [2,3,4,5]
+            ab = []                        
+            for i in range(0, len(a):
+            ab.append(a[i]*b[i]) """
+            
+        """for i in range(0,len(o2)):
+            mul.append(o2[i]*o3[i])
+            print("mul : ",mul)
+            
+            ans = o1-(mul/o4)
+            #ans.append(o1-((numpy.exp(-in0[0:1]*self.sigma)*(numpy.sin((self.freq*in0[0:1])+(self.sigma))))/numpy.sqrt(o1-numpy.square(self.zita))))
+            print("Final Value : ",ans)
+       
+            out[0:1] = ans"""
+         
+        
+       
+            #return len(output_items[0])
+        """elif self.zita > 1:
+            #o2 = -numpy.exp(-2*in0[0:1])
+            #o3 = -numpy.exp(-3*in0[0:1])
+            o2=numpy.exp(-in0[0:1]*self.sigma)
+            o3=numpy.sin((self.freq*in0[0:1])+(self.sigma))
+            o4=numpy.sqrt(o1-numpy.square(self.zita))
+            ans = o1-((o2*o3)/o4)
+            #ans.append(o1-((numpy.exp(-in0[0:1]*self.sigma)*(numpy.sin((self.freq*in0[0:1])+(self.sigma))))/numpy.sqrt(o1-numpy.square(self.zita))))
+            print("Final Value : ",ans)
+       
+            out[0:1] = ans
+         
+        
+            self.consume(0,1)
+            self.produce(0,1) 
+            #return len(output_items[0])"""
+             
+        
 
+            
+       
+      

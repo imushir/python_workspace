@@ -2301,6 +2301,7 @@ gnuradio.controls.dsim_sci|/usr/local/lib/python2.7/dist-packages/gnuradio/contr
 gnuradio.controls.expo|/usr/local/lib/python2.7/dist-packages/gnuradio/controls/expo.py
 gnuradio.controls.expr_utils|/usr/local/lib/python2.7/dist-packages/gnuradio/controls/expr_utils.py
 gnuradio.controls.multiorder_tf_2|/usr/local/lib/python2.7/dist-packages/gnuradio/controls/multiorder_tf_2.py
+gnuradio.controls.my_block|/usr/local/lib/python2.7/dist-packages/gnuradio/controls/my_block.py
 gnuradio.controls.nyquist|/usr/local/lib/python2.7/dist-packages/gnuradio/controls/nyquist.py
 gnuradio.controls.odict|/usr/local/lib/python2.7/dist-packages/gnuradio/controls/odict.py
 gnuradio.controls.plzr|/usr/local/lib/python2.7/dist-packages/gnuradio/controls/plzr.py
@@ -2431,6 +2432,7 @@ gnuradio.modtool.parser_cc_block|/usr/local/lib/python2.7/dist-packages/gnuradio
 gnuradio.modtool.templates|/usr/local/lib/python2.7/dist-packages/gnuradio/modtool/templates.py
 gnuradio.modtool.util_functions|/usr/local/lib/python2.7/dist-packages/gnuradio/modtool/util_functions.py
 gnuradio.multiorder_tf_2|/usr/local/lib/python2.7/dist-packages/gnuradio/multiorder_tf_2.py
+gnuradio.my_block|/usr/local/lib/python2.7/dist-packages/gnuradio/my_block.py
 gnuradio.nyquist|/usr/local/lib/python2.7/dist-packages/gnuradio/nyquist.py
 gnuradio.odict|/usr/local/lib/python2.7/dist-packages/gnuradio/odict.py
 gnuradio.optfir|/usr/local/lib/python2.7/dist-packages/gnuradio/optfir.py
