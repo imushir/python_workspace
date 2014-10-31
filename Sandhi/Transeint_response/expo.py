@@ -39,36 +39,38 @@ class expo(gras.Block):
     def yield_times(self):
         from datetime import date, time, datetime, timedelta
         start = datetime.combine(date.today(), time(0, 0))
-        yield start.strftime("%H:%M:%S")
+        yield start.strftime("%S")
         while True:
-            start += timedelta(seconds=7)
-            yield start.strftime("%H:%M:%S")   
+            start += timedelta(seconds=1)
+            yield start.strftime("%S")
+               
     
     def work(self, input_items, output_items):
         in0 = input_items[0]
         out = output_items[0]
-    
+        tmrg = []
         o1 = []
         o2 = []
         o3 = []
         o4 = []
         ans = []
-        mul = []
+        gen = self.yield_times()
+        for ii in range(10):
+            tmrg.append(gen.next())
+            print("tmrg :",tmrg)
         
-        o1 = (self.gama)/(self.alpha*self.beta)
-        print("o1 : ", o1)
-        o2 = ((self.gama)*(-numpy.exp(self.alpha*in0[0:1])))/(self.alpha*(self.beta-self.alpha))
-        print("o2 : ",o2)
-        o3 = ((self.gama)*(-numpy.exp(self.beta*in0[0:1])))/(self.beta*(self.alpha-self.beta))
-        print("o3 : ",o3)
-        ans.append(o1-o2-o3)
-        
-        
-        for ii in range(5):
-            #print gen.next()
-            out[0:1] = ans
-        
-        
+        for i1 in range(0,len(tmrg)):
+            o1.append((self.gama)/(self.alpha*self.beta))
+            print("o1 : ", o1)
+        for i2 in range(0,len(tmrg)):
+            o2.append(((self.gama)*(-numpy.exp(self.alpha*i2)))/(self.alpha*(self.beta-self.alpha)))
+            print("o2 : ",o2)
+        for i3 in range(0,len(tmrg)):
+            o3.append(((self.gama)*(-numpy.exp(self.beta*i2)))/(self.beta*(self.alpha-self.beta)))
+            print("o3 : ",o3)
+        ans.append(o2+o3+o4)
+        print("Final : ",ans)
+        out[0:1] = ans
         self.consume(0,1)
         self.produce(0,1)
         
