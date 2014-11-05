@@ -69,8 +69,8 @@ class expo(gras.Block):
         for i3 in range(0,len(tmrg)):
             o3.append(((self.gama)*(-numpy.exp(self.beta*i2)))/(self.beta*(self.alpha-self.beta)))
             print "o3 : ",o3
-        #ans.append(o1+o2+o3)
-        ans.append(list(numpy.array(o1)+numpy.array(o2)+numpy.array(o3)))
+        ans.append(o1+o2+o3)
+        #ans.append(list(numpy.array(o1)+numpy.array(o2)+numpy.array(o3)))
     
         print "Final Ans : ",ans
         print "Type out : ",type(out)
