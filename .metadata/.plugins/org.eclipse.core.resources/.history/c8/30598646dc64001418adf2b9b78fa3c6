@@ -77,8 +77,8 @@ class expo(gras.Block):
         print "Type ans :",type(ans)
         
         
-        out = copy.copy(ans)
-        #out[0:1] =  ans
+        #out = copy.copy(ans)
+        out[0:1] =  ans
         print "Output is : " ,out
         self.consume(0,1)
         self.produce(0,1)
