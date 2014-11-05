@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<block>
+  <name>nyquist</name>
+  <key>nyquist_block_nyquist</key>
+  <category>Internship_Plot</category>
+  <import>import gnuradio.nyquist</import>
+  <make>gnuradio.nyquist.nyquist()
+self.$(id).set_parameters($a,$b,$c,$d)
+</make>
+  <callback></callback>
+  <param>
+    <name>tf  numerator</name>
+    <key>a</key>
+    <value></value>
+    <type>string</type>
+  </param> 
+  <param>
+    <name>tf  denominator</name>
+    <key>b</key>
+    <value></value>
+    <type>string</type>
+  </param> 
+  <param>
+    <name>tf 2 numerator</name>
+    <key>c</key>
+    <value></value>
+    <type>string</type>
+  </param> 
+  <param>
+    <name>tf 2 denominator</name>
+    <key>d</key>
+    <value></value>
+    <type>string</type>
+  </param> 
+
+ <!-- 
+  <sink>
+    <name>in</name>
+    <type>float</type>
+  </sink>
+
+  <source>
+    <name>out</name>
+    <type>float</type>
+  </source>-->
+  <doc>
+  Computes the Nyquist plot i.e Imaginary part versus Real part of the frequency response of the product of two transfer functions.
+
+  </doc>
+</block>

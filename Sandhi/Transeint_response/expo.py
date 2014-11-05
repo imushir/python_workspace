@@ -19,6 +19,7 @@
 # 
 
 import numpy
+import copy
 #from gnuradio import gr
 import gras
 
@@ -41,7 +42,7 @@ class expo(gras.Block):
         start = datetime.combine(date.today(), time(0, 0))
         yield start.strftime("%S")
         while True:
-            start += timedelta(seconds=1)
+            start += timedelta(seconds=0.5)
             yield start.strftime("%S")
                
     
@@ -55,70 +56,66 @@ class expo(gras.Block):
         o4 = []
         ans = []
         gen = self.yield_times()
-        for ii in range(10):
+        for ii in range(20):
             tmrg.append(gen.next())
-            print("tmrg :",tmrg)
+            print "tmrg :",tmrg
         
         for i1 in range(0,len(tmrg)):
             o1.append((self.gama)/(self.alpha*self.beta))
-            print("o1 : ", o1)
+            print "o1 : ", o1
         for i2 in range(0,len(tmrg)):
             o2.append(((self.gama)*(-numpy.exp(self.alpha*i2)))/(self.alpha*(self.beta-self.alpha)))
-            print("o2 : ",o2)
+            print "o2 : ",o2
         for i3 in range(0,len(tmrg)):
             o3.append(((self.gama)*(-numpy.exp(self.beta*i2)))/(self.beta*(self.alpha-self.beta)))
-            print("o3 : ",o3)
-        ans.append(o2+o3+o4)
-        print("Final : ",ans)
-        out[0:1] = ans
+            print "o3 : ",o3
+        ans.append(o1+o2+o3)
+        #ans.append(list(numpy.array(o1)+numpy.array(o2)+numpy.array(o3)))
+    
+        print "Final Ans : ",ans
+        print "Type out : ",type(out)
+        print "Type ans :",type(ans)
+        
+        
+        out = copy.copy(ans)
+            #out[0:1] =  ans
+        print "Output is : " ,out
         self.consume(0,1)
         self.produce(0,1)
         
         
         #o2 = -numpy.exp(-2*in0[0:1])
         #o3 = -numpy.exp(-3*in0[0:1])
-        #o2=numpy.exp(-(in0[0:1]*self.sigma))
+        #o2=numpy.exp(-(in0[0:1]*self.alpha))
         #print("o2 :",o2)
         #o3=numpy.sin((self.freq*in0[0:1])+(self.sigma))
         #print("o3 :",o3)
         #o4=numpy.sqrt(o1-numpy.square(self.zita))
         #print("o4 :",o4)
             
-        """"a = [1,2,3,4]
-            b = [2,3,4,5]
-            ab = []                        
-            for i in range(0, len(a):
-            ab.append(a[i]*b[i]) """
+        
             
-        """for i in range(0,len(o2)):
-            mul.append(o2[i]*o3[i])
-            print("mul : ",mul)
-            
-            ans = o1-(mul/o4)
-            #ans.append(o1-((numpy.exp(-in0[0:1]*self.sigma)*(numpy.sin((self.freq*in0[0:1])+(self.sigma))))/numpy.sqrt(o1-numpy.square(self.zita))))
-            print("Final Value : ",ans)
+        """ans = o1-(mul/o4)
+        #ans.append(o1-((numpy.exp(-in0[0:1]*self.sigma)*(numpy.sin((self.freq*in0[0:1])+(self.sigma))))/numpy.sqrt(o1-numpy.square(self.zita))))
+        print("Final Value : ",ans)
+        out[0:1] = ans"""
+        #o2 = -numpy.exp(-2*tmrg)
+        #o3 = -numpy.exp(-3*in0[0:1])
+        #o2 = numpy.exp(-in0[0:1]*self.alpha)
+        #o3 = numpy.exp(-in0[0:1]*self.beta)
+        #o4 = numpy.sqrt(1-numpy.square(self.alpha))
+        #ans = 1-((o2*o3)/o4)
+        #ans.append(o2)
+        #ans.append(o1-((numpy.exp(-in0[0:1]*self.sigma)*(numpy.sin((self.freq*in0[0:1])+(self.sigma))))/numpy.sqrt(o1-numpy.square(self.zita))))
+        #print("Final Value : ",ans)
        
-            out[0:1] = ans"""
+        #out[0:1] = ans
+        #out = copy.copy(ans)
          
         
-       
-            #return len(output_items[0])
-        """elif self.zita > 1:
-            #o2 = -numpy.exp(-2*in0[0:1])
-            #o3 = -numpy.exp(-3*in0[0:1])
-            o2=numpy.exp(-in0[0:1]*self.sigma)
-            o3=numpy.sin((self.freq*in0[0:1])+(self.sigma))
-            o4=numpy.sqrt(o1-numpy.square(self.zita))
-            ans = o1-((o2*o3)/o4)
-            #ans.append(o1-((numpy.exp(-in0[0:1]*self.sigma)*(numpy.sin((self.freq*in0[0:1])+(self.sigma))))/numpy.sqrt(o1-numpy.square(self.zita))))
-            print("Final Value : ",ans)
-       
-            out[0:1] = ans
-         
-        
-            self.consume(0,1)
-            self.produce(0,1) 
-            #return len(output_items[0])"""
+        #self.consume(0,1)
+        #self.produce(0,1) 
+        #return len(output_items[0])
              
         
 

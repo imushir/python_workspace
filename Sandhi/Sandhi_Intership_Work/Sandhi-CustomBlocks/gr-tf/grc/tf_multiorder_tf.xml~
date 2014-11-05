@@ -1,0 +1,155 @@
+<?xml version="1.0"?>
+<!--
+###################################################
+##
+CSIM Block:
+##    all types, 1 output, 2 to inf inputs
+###################################################
+ -->
+<block>
+    <name>multiorder_tf</name>
+    <key>multiorder_tf</key>
+    <category>Intership</category>
+
+    <import>import gnuradio.multiorder_tf</import>
+    <make>gnuradio.multiorder_tf.multiorder_tf()
+self.$(id).set_parameters($P, $I, $D, $n0, $n1,$n2, $n3, $d0, $d1,$d2, $d3, $window)
+    </make>
+    <param>
+        <name>IO Type</name>
+        <key>type</key>
+        <type>enum</type>
+        <option><name>FC32_FC32</name><key>fc32_fc32</key></option>
+        <option><name>F32_F32</name><key>f32_f32</key></option>
+        <option><name>SC32_SC32</name><key>sc32_sc32</key></option>
+        <option><name>S32_S32</name><key>s32_s32</key></option>
+        <option><name>SC16_SC16</name><key>sc16_sc16</key></option>
+        <option><name>S16_S16</name><key>s16_s16</key></option>
+        <option><name>SC8_SC8</name><key>sc8_sc8</key></option>
+        <option><name>S8_S8</name><key>s8_s8</key></option>
+    </param>
+    <param>
+        <name>Num Inputs</name>
+        <key>num_inputs</key>
+        <value>1</value>
+        <type>int</type>
+    </param>
+    <param>
+        <name>Vec Length</name>
+        <key>vlen</key>
+        <value>1</value>
+        <type>int</type>
+    </param>
+
+    <!--
+    Desimulation options
+    -->
+     <param>
+        <name>Controller Gain(P)</name>
+        <key>P</key>
+        <value>0</value>
+        <type>real</type>
+    </param>
+    <param>
+        <name>Tau_I(I)</name>
+        <key>I</key>
+        <value>0</value>
+        <type>real</type>
+    </param>
+    <param>
+        <name>Tau_D(D)</name>
+        <key>D</key>
+        <value>0</value>
+        <type>real</type>
+    </param>
+
+    <param>
+        <name>n0</name>
+        <key>n0</key>
+        <value>0</value>
+        <type>real</type>
+    </param>
+
+     <param>
+        <name>n1</name>
+        <key>n1</key>
+        <value>0</value>
+        <type>real</type>
+    </param>
+
+     <param>
+	<name>n2</name>
+	<key>n2</key>
+	<value>0</value>
+	<type>real</type>
+    </param>
+
+     <param>
+	<name>n3</name>
+	<key>n3</key>
+	<value>0</value>
+	<type>real</type>
+    </param>
+   <param>
+        <name>d0</name>
+        <key>d0</key>
+        <value>0</value>
+        <type>real</type>
+    </param>
+
+    <param>
+        <name>d1</name>
+        <key>d1</key>
+        <value>0</value>
+        <type>real</type>
+    </param>
+
+     <param>
+	<name>d2</name>
+	<key>d2</key>
+	<value>0</value>
+	<type>real</type>
+    </param>
+     <param>
+	<name>d3</name>
+	<key>d3</key>
+        <value>0</value>
+	<type>real</type>
+    </param>
+    <param>
+        <name>window</name>
+        <key>window</key>
+        <value>0</value>
+        <type>real</type>
+    </param>
+
+
+    <!--
+    Check if number of inputs are greater than 0, and if vector length
+    is greater than 0.
+    -->
+    <check>$num_inputs &gt; 0</check>
+    <check>$vlen &gt; 0</check>
+    <sink>
+        <name>in</name>
+        <type>$(str($type).split('_')[0])</type>
+        <vlen>$vlen</vlen>
+        <nports>$num_inputs</nports>
+    </sink>
+    <source>
+        <name>out</name>
+        <type>$(str($type).split('_')[1])</type>
+        <vlen>$vlen</vlen>
+    </source>
+    <doc>
+
+Continuous time simulation
+
+The block simulates the dynamics of plant and controller. Insert the values of P,I and D for the controller and the transfer function of the plant. The trasfer function should be in the following format:
+(n0*s^3 + n1*s^2 + n2*s + n3)/(d0*s^3 + d1*s^2 + d2*s + d3)
+
+The block can also work as a pure csim block for plant/controller if the other parameters are kept null, i.e. if the P,I and D variables are set to 0, the block simply simulates the transfer function mentioned and vice versa.
+
+    </doc>
+</block>
+

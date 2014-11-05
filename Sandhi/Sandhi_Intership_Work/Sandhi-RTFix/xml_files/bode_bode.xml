@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<block>
+  <name>bode</name>
+  <key>bode_bode</key>
+  <category>Internship_Plot</category>
+  <import>import gnuradio.bode</import>
+  <make>gnuradio.bode.bode()
+self.$(id).set_parameters($a,$b)
+</make>
+  <param>
+    <name>Enter numerator of Tf</name>
+    <key>a</key>
+    <value></value>
+    <type>string</type>
+  </param>
+  <param>
+    <name>Enter denominator of Tf</name>
+    <key>b</key>
+    <value></value>
+    <type>string</type>
+  </param>
+<!--  <param>
+    <name>Transfer function 2 numerator</name>
+    <key>c</key>
+    <value></value>
+    <type>string</type>
+  </param>
+  <param>
+    <name>Transfer function 2 denominator</name>
+    <key>d</key>
+    <value></value>
+    <type>string</type>
+  </param> -->
+<!--
+  <sink>
+    <name>in</name>
+    <type>float</type>
+  </sink>
+
+  <source>
+    <name>out</name>
+    <type>float</type>
+  </source>-->
+  <doc>
+	Computes the bode plot i.e. the magnitude and phase of the frquency response of the given trasnfer function.
+	
+	Example: Numerator of Transfer Function(Tf) - s**2+2*0.9*10*s+100
+		 Denominator of Transfer Function(Tf) - s**2+2*0.3*10.1*s+102.01
+
+  </doc>
+</block>

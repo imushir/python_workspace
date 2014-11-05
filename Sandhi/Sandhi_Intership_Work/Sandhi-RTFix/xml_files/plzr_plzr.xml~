@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<block>
+  <name>plzr</name>
+  <key>plzr_plzr</key>
+  <category>plzr</category>
+  <import>import gnuradio.plzr</import>
+  <make>gnuradio.plzr.plzr()
+self.$(id).set_parameters($n,$d)
+</make>
+  <param>
+    <name>tf numerator</name>
+    <key>n</key>
+    <value></value>
+    <type>string</type>
+  </param>
+  <param>
+    <name>tf denominator</name>
+    <key>d</key>
+    <value></value>
+    <type>string</type>
+  </param>
+  <sink>
+    <name>in</name>
+    <type>float</type>
+  </sink>
+
+  <source>
+    <name>out</name>
+    <type>float</type>
+  </source>
+  <doc>
+    Produces a pole-zero plot of the linear system.
+  </doc>
+</block>
