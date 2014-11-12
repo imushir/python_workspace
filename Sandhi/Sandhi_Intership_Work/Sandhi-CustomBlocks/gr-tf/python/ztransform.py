@@ -63,19 +63,23 @@ class ztransform(gras.Block):
         ans2 = 0
         for i in range(1,self.den_ord + 1):
             ans1 += self.den_coeff[i]*self.out_q[len(self.out_q)-i]
+            print "Ans1:", ans1
     
         self.in_q.append(float(in0[0]))
         #print self.in_q    
         for i in range(0,self.den_ord + 1):
             ans2 += self.num_coeff[i]*self.in_q[len(self.in_q)-i-1]
+            print "Ans2:",ans2
+            
          #print ans2
         ans = ans2 - ans1
         ans = ans/self.den_coeff[0]
+     
     
         self.out_q.append(ans)
-        print "Final Ans : ",self.out_q
-        self.out_q.pop(0)
-        self.in_q.pop(0)
+        #print "Final Ans : ",self.out_q
+        #self.out_q.pop(0)
+        #self.in_q.pop(0)
 
         out[0] = ans
         print "OUTPUT:",out[0]

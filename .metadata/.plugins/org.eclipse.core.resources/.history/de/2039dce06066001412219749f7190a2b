@@ -1,0 +1,8 @@
+import sys
+from PyQt4 import QtGui
+
+class Example(QtGui.QWidget):
+    
+    
+    def __init__(self):
+        

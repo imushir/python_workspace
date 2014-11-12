@@ -4235,6 +4235,7 @@ scipy.optimize.tnc|/usr/lib/python2.7/dist-packages/scipy/optimize/tnc.py
 scipy.optimize.zeros|/usr/lib/python2.7/dist-packages/scipy/optimize/zeros.py
 scipy.setup|/usr/lib/python2.7/dist-packages/scipy/setup.py
 scipy.setupscons|/usr/lib/python2.7/dist-packages/scipy/setupscons.py
+scipy.signal
 scipy.signal.__init__|/usr/lib/python2.7/dist-packages/scipy/signal/__init__.py
 scipy.signal.bsplines|/usr/lib/python2.7/dist-packages/scipy/signal/bsplines.py
 scipy.signal.filter_design|/usr/lib/python2.7/dist-packages/scipy/signal/filter_design.py

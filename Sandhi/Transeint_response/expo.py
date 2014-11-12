@@ -19,7 +19,8 @@
 # 
 
 import numpy
-import copy
+#from operator import add
+#import copy
 #from gnuradio import gr
 import gras
 
@@ -53,24 +54,26 @@ class expo(gras.Block):
         o1 = []
         o2 = []
         o3 = []
-        o4 = []
         ans = []
+        final_output = []
+        
         gen = self.yield_times()
         for ii in range(20):
             tmrg.append(gen.next())
-            print "tmrg :",tmrg
+        # print "tmrg :",tmrg
         
-        for i1 in range(0,len(tmrg)):
+        """for i1 in range(0,10):
             o1.append((self.gama)/(self.alpha*self.beta))
             print "o1 : ", o1
-        for i2 in range(0,len(tmrg)):
-            o2.append(((self.gama)*(-numpy.exp(self.alpha*in0[0:1])))/(self.alpha*(self.beta-self.alpha)))
+        for i2 in range(0,10):
+            o2.append(((self.gama)*(-numpy.exp(self.alpha)))/(self.alpha*(self.beta-self.alpha)))
             print "o2 : ",o2
-        for i3 in range(0,len(tmrg)):
-            o3.append(((self.gama)*(-numpy.exp(self.beta*in0[0:1])))/(self.beta*(self.alpha-self.beta)))
+        for i3 in range(0,10):
+            o3.append(((self.gama)*(-numpy.exp(self.beta)))/(self.beta*(self.alpha-self.beta)))
             print "o3 : ",o3
         #ans.append(o1+o2+o3)
-        ans.append(list(numpy.array(o1)+numpy.array(o2)+numpy.array(o3)))
+        for i in range(0,10):
+            ans.append(list(numpy.array(o1[i])+numpy.array(o2[i])+numpy.array(o3[i])))
     
         print "Final Ans : ",ans
         print "Type out : ",type(out)
@@ -78,10 +81,50 @@ class expo(gras.Block):
         
         
         out = copy.copy(ans)
+        
         #out[0:1] =  ans
         print "Output is : " ,out
         self.consume(0,1)
+        self.produce(0,1)"""
+        #o1.append((self.gama)/(self.alpha*self.beta))
+        #print "o1 : ", o1
+        for i in range(0,20):
+            o1.append((self.gama)/(self.alpha*self.beta))
+            print "o1 : ", o1
+
+            o2.append(((self.gama)*(numpy.exp(-(self.alpha*in0[0]*i)))/(self.alpha*(self.beta-self.alpha))))
+            print "o2 : ",o2[i]   
+            
+            o3.append(((self.gama)*(numpy.exp(-(self.beta*in0[0]*i)))/(self.beta*(self.alpha-self.beta))))
+            print "o3 : ",o3[i]
+            ans.append(o1[i]+o2[i]+o3[i])
+            print "Final Ans : ",ans
+            #print "Type out : ",type(out)
+            #print "Type ans :",type(ans)
+            #out[0:1] = ans
+            #print "Output : ", out[0]
+    
+        #for i in range(0,len(ans)):
+            #out = copy.copy(ans[i])
+            #out[0:1] =  ans
+            #print "Output is : " ,out
+        """for i1 in range(0,len(ans)):
+            final_output.append(o1+ans[i1])
+            print "Final OutPut : ", final_output"""  
+        for i1 in range(0,len(ans)):
+            out[0:1] = ans.pop([i1])
+        #out[:len(final_output)] = copy.copy(final_output)
+        self.consume(0,1)
         self.produce(0,1)
+        
+        """result = []
+        for i in range(0,20):
+            result.append(numpy.exp(i))
+            print "Result : ",result
+            out[0] = result
+            
+        self.consume(0,1)
+        self.produce(0,1) """
         
         
         #o2 = -numpy.exp(-2*in0[0:1])

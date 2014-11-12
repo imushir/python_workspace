@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Sandhi/PyQT4/ex4&apos; to &apos;ex4.py&apos;" description="Rename resource &apos;ex4&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="PyQT4/ex4" name="ex4.py" stamp="1415353197935" updateReferences="true"/>
+</session>
