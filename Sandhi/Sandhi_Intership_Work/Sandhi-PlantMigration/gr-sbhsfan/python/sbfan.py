@@ -41,9 +41,10 @@ class sbfan(gras.Block):
 	self.new_device.connect_device(0)
 
 
-    def set_parameters(self,window,fan_value):
-	self.n = window
-	self.fan = fan_value
+    def set_parameters(self,window,fan_value,heat_value):
+        self.n = window
+        self.fan = fan_value
+        self.heat = heat_value
 
 
     def isIntegralWin(self,input_item,window):
@@ -54,18 +55,20 @@ class sbfan(gras.Block):
         
     def work(self, input_items, output_items):
         
-	for heat_items in input_items[0]:
-		print "Heat Written", heat_items
+        
+	#for heat_items in input_items[0]:
+		#print "Heat Written", heat_items
 		# Set heat as 0 for negative values of heat
-		if heat_items < 0:
-			self.new_device.setHeat(0)
-		else: 
-			self.new_device.setHeat(heat_items)
-
-		time.sleep(0.5)
-		self.new_device.setFan(self.fan)
-	
-		time.sleep(0.5)
+		#if heat_items < 0:
+			#self.new_device.setHeat(0)
+		#else: 
+		#	self.new_device.setHeat(heat_items)
+        time.sleep(0.5)
+        self.new_device.setFan(self.fan)
+        time.sleep(0.5)
+        self.new_device.setHeat(self.heat)
+        
+        time.sleep(0.5)
 
 		
 	#For zero Temperatures

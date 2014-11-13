@@ -12,7 +12,7 @@
 
     <import>import gnuradio.sbhs.sbfan as sbfan</import>
     <make>sbfan.sbfan()
-self.$(id).set_parameters($window,$fan_val)
+self.$(id).set_parameters($window,$fan_val,$heat_val)
     </make>
     <param>
         <name>IO Type</name>
@@ -28,7 +28,13 @@ self.$(id).set_parameters($window,$fan_val)
 	<key>fan_val</key>
 	<value>20</value>
 	<type>real</type>
-    </param>	
+    </param>
+    <param>
+	<name>Heat_Val</name>
+	<key>heat_val</key>
+	<value>20</value>
+	<type>real</type>
+    </param>		
 		
     <param>
         <name>Num Inputs</name>

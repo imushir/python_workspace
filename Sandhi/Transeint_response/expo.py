@@ -90,30 +90,30 @@ class expo(gras.Block):
         #print "o1 : ", o1
         for i in range(0,20):
             o1.append((self.gama)/(self.alpha*self.beta))
-            print "o1 : ", o1
+            print "o1 : ", o1[i]
 
-            o2.append(((self.gama)*(numpy.exp(-(self.alpha*in0[0]*i)))/(self.alpha*(self.beta-self.alpha))))
+            o2.append(((self.gama)*(numpy.exp(-(self.alpha*i)))/(self.alpha*(self.beta-self.alpha))))
             print "o2 : ",o2[i]   
             
-            o3.append(((self.gama)*(numpy.exp(-(self.beta*in0[0]*i)))/(self.beta*(self.alpha-self.beta))))
+            o3.append(((self.gama)*(numpy.exp(-(self.beta*i)))/(self.beta*(self.alpha-self.beta))))
             print "o3 : ",o3[i]
-            ans.append(o1[i]+o2[i]+o3[i])
+            ans.append(o1+o2[i]+o3[i])
             print "Final Ans : ",ans
             #print "Type out : ",type(out)
             #print "Type ans :",type(ans)
             #out[0:1] = ans
             #print "Output : ", out[0]
-    
-        #for i in range(0,len(ans)):
+        """for i in range(0,len(ans)):
             #out = copy.copy(ans[i])
             #out[0:1] =  ans
-            #print "Output is : " ,out
+            #print "Output is : " ,out"""
         """for i1 in range(0,len(ans)):
             final_output.append(o1+ans[i1])
-            print "Final OutPut : ", final_output"""  
+            print "Final OutPut : ", final_output"""
         for i1 in range(0,len(ans)):
-            out[0:1] = ans.pop([i1])
-        #out[:len(final_output)] = copy.copy(final_output)
+            out[:1] = ans[i1]
+            print "Output Sent : ", out[i1]
+            #out[:len(final_output)] = copy.copy(final_output)
         self.consume(0,1)
         self.produce(0,1)
         

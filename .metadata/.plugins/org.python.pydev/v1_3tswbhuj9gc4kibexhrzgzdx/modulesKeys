@@ -2306,6 +2306,9 @@ gnuradio.controls.nyquist|/usr/local/lib/python2.7/dist-packages/gnuradio/contro
 gnuradio.controls.odict|/usr/local/lib/python2.7/dist-packages/gnuradio/controls/odict.py
 gnuradio.controls.plzr|/usr/local/lib/python2.7/dist-packages/gnuradio/controls/plzr.py
 gnuradio.controls.power|/usr/local/lib/python2.7/dist-packages/gnuradio/controls/power.py
+gnuradio.controls.sbfan|/usr/local/lib/python2.7/dist-packages/gnuradio/controls/sbfan.py
+gnuradio.controls.sbhs|/usr/local/lib/python2.7/dist-packages/gnuradio/controls/sbhs.py
+gnuradio.controls.scan_machines|/usr/local/lib/python2.7/dist-packages/gnuradio/controls/scan_machines.py
 gnuradio.controls.sci_py_akshay|/usr/local/lib/python2.7/dist-packages/gnuradio/controls/sci_py_akshay.py
 gnuradio.controls.square3_ff|/usr/local/lib/python2.7/dist-packages/gnuradio/controls/square3_ff.py
 gnuradio.controls.ztransform|/usr/local/lib/python2.7/dist-packages/gnuradio/controls/ztransform.py
@@ -2446,12 +2449,16 @@ gnuradio.pyqt_plot|/usr/local/lib/python2.7/dist-packages/gnuradio/pyqt_plot.py
 gnuradio.qtgui.__init__|/usr/local/lib/python2.7/dist-packages/gnuradio/qtgui/__init__.py
 gnuradio.qtgui._qtgui_swig|/usr/local/lib/python2.7/dist-packages/gnuradio/qtgui/_qtgui_swig.so
 gnuradio.qtgui.qtgui_swig|/usr/local/lib/python2.7/dist-packages/gnuradio/qtgui/qtgui_swig.py
+gnuradio.sbfan|/usr/local/lib/python2.7/dist-packages/gnuradio/sbfan.py
+gnuradio.sbhs|/usr/local/lib/python2.7/dist-packages/gnuradio/sbhs.py
 gnuradio.sbhs.__init__|/usr/local/lib/python2.7/dist-packages/gnuradio/sbhs/__init__.py
 gnuradio.sbhs.gr_controller|/usr/local/lib/python2.7/dist-packages/gnuradio/sbhs/gr_controller.py
 gnuradio.sbhs.gr_sbhs|/usr/local/lib/python2.7/dist-packages/gnuradio/sbhs/gr_sbhs.py
 gnuradio.sbhs.que|/usr/local/lib/python2.7/dist-packages/gnuradio/sbhs/que.py
+gnuradio.sbhs.sbfan|/usr/local/lib/python2.7/dist-packages/gnuradio/sbhs/sbfan.py
 gnuradio.sbhs.sbhs|/usr/local/lib/python2.7/dist-packages/gnuradio/sbhs/sbhs.py
 gnuradio.sbhs.scan_machines|/usr/local/lib/python2.7/dist-packages/gnuradio/sbhs/scan_machines.py
+gnuradio.scan_machines|/usr/local/lib/python2.7/dist-packages/gnuradio/scan_machines.py
 gnuradio.sci_py_akshay|/usr/local/lib/python2.7/dist-packages/gnuradio/sci_py_akshay.py
 gnuradio.scigen.__init__|/usr/local/lib/python2.7/dist-packages/gnuradio/scigen/__init__.py
 gnuradio.scigen.generic|/usr/local/lib/python2.7/dist-packages/gnuradio/scigen/generic.py
@@ -4235,7 +4242,6 @@ scipy.optimize.tnc|/usr/lib/python2.7/dist-packages/scipy/optimize/tnc.py
 scipy.optimize.zeros|/usr/lib/python2.7/dist-packages/scipy/optimize/zeros.py
 scipy.setup|/usr/lib/python2.7/dist-packages/scipy/setup.py
 scipy.setupscons|/usr/lib/python2.7/dist-packages/scipy/setupscons.py
-scipy.signal
 scipy.signal.__init__|/usr/lib/python2.7/dist-packages/scipy/signal/__init__.py
 scipy.signal.bsplines|/usr/lib/python2.7/dist-packages/scipy/signal/bsplines.py
 scipy.signal.filter_design|/usr/lib/python2.7/dist-packages/scipy/signal/filter_design.py
