@@ -50,8 +50,8 @@ class expo(gras.Block):
                
     
     def work(self, input_items, output_items):
-        #in0 = input_items[0]
-        #out = output_items[0]
+        in0 = input_items[0]
+        out = output_items[0]
         #tmrg = []
         o1 = []
         o2 = []
@@ -88,8 +88,7 @@ class expo(gras.Block):
         print "Output is : " ,out
         self.consume(0,1)
         self.produce(0,1)"""
-        #o1.append((self.gama)/(self.alpha*self.beta))
-        #print "o1 : ", o1
+       
         for i in range(0,30):
             o1.append((self.gama)/(self.alpha*self.beta))
             print "o1 : ", o1[i]
@@ -101,66 +100,37 @@ class expo(gras.Block):
             print "o3 : ",o3[i]
             ans.append(o1[i]+o2[i]+o3[i])
             print "Final Ans : ",ans
+            print "Lenght of Ans :",len(ans)
+            
         """for i in range(0,len(ans)):
             #out = copy.copy(ans[i])
             #out[0:1] =  ans
             #print "Output is : " ,out"""
         """for i1 in range(0,len(ans)):
             final_output.append(o1+ans[i1])
-            print "Final OutPut : ", final_output"""    
-        #output_items[0][:1] = ans[15]
-    
-        for i in range(0,len(ans)):
-            output_items[0][:1] = ans[i]
-        #print "Output Sent : ", output_items[i1]
-        #out[:len(final_output)] = copy.copy(final_output)
+            print "Final OutPut : ", final_output"""
+        #for i1 in range(0,len(ans)):
+         #   output_items[0][:1] = ans[i1]
         
+        for i1 in range(0,len(ans)):
+            out[:] += ans[i1]
+            #out[:] = ans[i1]
         
         self.consume(0,1)
         self.produce(0,1)
-        
-        """result = []
-        for i in range(0,20):
-            result.append(numpy.exp(i))
-            print "Result : ",result
-            out[0] = result
-            
-        self.consume(0,1)
-        self.produce(0,1) """
-        
-        
-        #o2 = -numpy.exp(-2*in0[0:1])
-        #o3 = -numpy.exp(-3*in0[0:1])
-        #o2=numpy.exp(-(in0[0:1]*self.alpha))
-        #print("o2 :",o2)
-        #o3=numpy.sin((self.freq*in0[0:1])+(self.sigma))
-        #print("o3 :",o3)
-        #o4=numpy.sqrt(o1-numpy.square(self.zita))
-        #print("o4 :",o4)
-            
         
             
         """ans = o1-(mul/o4)
         #ans.append(o1-((numpy.exp(-in0[0:1]*self.sigma)*(numpy.sin((self.freq*in0[0:1])+(self.sigma))))/numpy.sqrt(o1-numpy.square(self.zita))))
         print("Final Value : ",ans)
         out[0:1] = ans"""
-        #o2 = -numpy.exp(-2*tmrg)
-        #o3 = -numpy.exp(-3*in0[0:1])
-        #o2 = numpy.exp(-in0[0:1]*self.alpha)
-        #o3 = numpy.exp(-in0[0:1]*self.beta)
-        #o4 = numpy.sqrt(1-numpy.square(self.alpha))
-        #ans = 1-((o2*o3)/o4)
-        #ans.append(o2)
-        #ans.append(o1-((numpy.exp(-in0[0:1]*self.sigma)*(numpy.sin((self.freq*in0[0:1])+(self.sigma))))/numpy.sqrt(o1-numpy.square(self.zita))))
-        #print("Final Value : ",ans)
+        
        
         #out[0:1] = ans
         #out = copy.copy(ans)
          
         
-        #self.consume(0,1)
-        #self.produce(0,1) 
-        #return len(output_items[0])
+      
              
         
 
