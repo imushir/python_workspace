@@ -7,7 +7,10 @@ Control.guidemo1|/home/mushirahmed/python_workspace/Sandhi/Control/guidemo1.py
 DomExample.demo|/home/mushirahmed/python_workspace/Sandhi/DomExample/demo.py
 GUIDEMO.analog_clock|/home/mushirahmed/python_workspace/Sandhi/GUIDEMO/analog_clock.py
 GUIDEMO.basic_example|/home/mushirahmed/python_workspace/Sandhi/GUIDEMO/basic_example.py
+GUIDEMO.basic_units|/home/mushirahmed/python_workspace/Sandhi/GUIDEMO/basic_units.py
 GUIDEMO.demo1|/home/mushirahmed/python_workspace/Sandhi/GUIDEMO/demo1.py
+GUIDEMO.embedding_in_gtk3_panzoom|/home/mushirahmed/python_workspace/Sandhi/GUIDEMO/embedding_in_gtk3_panzoom.py
+GUIDEMO.mathtext_wx|/home/mushirahmed/python_workspace/Sandhi/GUIDEMO/mathtext_wx.py
 GUIDEMO.slider_demo1|/home/mushirahmed/python_workspace/Sandhi/GUIDEMO/slider_demo1.py
 GUIDEMO.slider_demo2|/home/mushirahmed/python_workspace/Sandhi/GUIDEMO/slider_demo2.py
 GUIDEMO.slider_demo3|/home/mushirahmed/python_workspace/Sandhi/GUIDEMO/slider_demo3.py

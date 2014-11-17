@@ -1,0 +1,10 @@
+import os
+import time
+
+# 1.The files and directories to be backed up are specified in  source
+source = ['/home/mushirahmed/Backup_python_Demo/Source_1','/home/mushirahmed/Backup_python_Demo/Source_2']
+
+#2.The backup must be strored in main backup directory
+
+target_dir = '/home/mushirahmed/Backup_python_Demo/Desti'
+

@@ -1,0 +1,3 @@
+class Person:
+    '''Represents a person.'''
+    population = 0

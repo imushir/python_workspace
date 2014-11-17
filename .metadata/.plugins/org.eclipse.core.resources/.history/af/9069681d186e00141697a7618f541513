@@ -1,0 +1,2 @@
+class SchoolMember:
+    '''Represents any school member.'''

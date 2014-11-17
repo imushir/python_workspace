@@ -1,0 +1,8 @@
+shoplist = ['apple','mango','carrot','banana']
+
+print 'I have ',len(shoplist),'items to purchase.'
+
+print 'These items are:',
+for item in shoplist:
+    
+

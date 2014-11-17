@@ -93,10 +93,10 @@ class expo(gras.Block):
             o1.append((self.gama)/(self.alpha*self.beta))
             print "o1 : ", o1[i]
 
-            o2.append(((self.gama)*(-numpy.exp((-self.alpha*i)))/(self.alpha*(self.beta-self.alpha))))
+            o2.append(((self.gama)*(-numpy.exp((-self.alpha*i*in0[0])))/(self.alpha*(self.beta-self.alpha))))
             print "o2 : ",o2[i]   
             
-            o3.append(((self.gama)*(-numpy.exp((-self.beta*i)))/(self.beta*(self.alpha-self.beta))))
+            o3.append(((self.gama)*(-numpy.exp((-self.beta*i*in0[0])))/(self.beta*(self.alpha-self.beta))))
             print "o3 : ",o3[i]
             ans.append(o1[i]+o2[i]+o3[i])
             print "Final Ans : ",ans
@@ -113,8 +113,8 @@ class expo(gras.Block):
          #   output_items[0][:1] = ans[i1]
         
         for i1 in range(0,len(ans)):
-            out[:] += ans[i1]
-            #out[:] = ans[i1]
+            #out[:1] += ans[i1]
+            out[:1] = ans[i1]
         
         self.consume(0,1)
         self.produce(0,1)

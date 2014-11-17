@@ -1,0 +1,3 @@
+import cPickle as p
+
+shoplistfile = 'demo.data'

@@ -1,0 +1,2 @@
+ab = { 'A':'AAAAAAAA','B':'BBBBBBBb','C':'CCCCCC','B':'BBBBBBBB' }
+print "A's address is %s" %ab['A']

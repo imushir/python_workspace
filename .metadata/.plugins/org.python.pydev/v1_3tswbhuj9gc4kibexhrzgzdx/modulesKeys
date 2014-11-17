@@ -3376,6 +3376,7 @@ numpy.f2py.rules|/usr/lib/python2.7/dist-packages/numpy/f2py/rules.py
 numpy.f2py.setup|/usr/lib/python2.7/dist-packages/numpy/f2py/setup.py
 numpy.f2py.setupscons|/usr/lib/python2.7/dist-packages/numpy/f2py/setupscons.py
 numpy.f2py.use_rules|/usr/lib/python2.7/dist-packages/numpy/f2py/use_rules.py
+numpy.fft
 numpy.fft.__init__|/usr/lib/python2.7/dist-packages/numpy/fft/__init__.py
 numpy.fft.fftpack|/usr/lib/python2.7/dist-packages/numpy/fft/fftpack.py
 numpy.fft.fftpack_lite|/usr/lib/python2.7/dist-packages/numpy/fft/fftpack_lite.so
@@ -3407,6 +3408,7 @@ numpy.lib.type_check|/usr/lib/python2.7/dist-packages/numpy/lib/type_check.py
 numpy.lib.ufunclike|/usr/lib/python2.7/dist-packages/numpy/lib/ufunclike.py
 numpy.lib.user_array|/usr/lib/python2.7/dist-packages/numpy/lib/user_array.py
 numpy.lib.utils|/usr/lib/python2.7/dist-packages/numpy/lib/utils.py
+numpy.linalg
 numpy.linalg.__init__|/usr/lib/python2.7/dist-packages/numpy/linalg/__init__.py
 numpy.linalg.info|/usr/lib/python2.7/dist-packages/numpy/linalg/info.py
 numpy.linalg.lapack_lite|/usr/lib/python2.7/dist-packages/numpy/linalg/lapack_lite.so
@@ -3482,6 +3484,7 @@ numpy.polynomial.polynomial|/usr/lib/python2.7/dist-packages/numpy/polynomial/po
 numpy.polynomial.polytemplate|/usr/lib/python2.7/dist-packages/numpy/polynomial/polytemplate.py
 numpy.polynomial.polyutils|/usr/lib/python2.7/dist-packages/numpy/polynomial/polyutils.py
 numpy.polynomial.setup|/usr/lib/python2.7/dist-packages/numpy/polynomial/setup.py
+numpy.random
 numpy.random.__init__|/usr/lib/python2.7/dist-packages/numpy/random/__init__.py
 numpy.random.info|/usr/lib/python2.7/dist-packages/numpy/random/info.py
 numpy.random.mtrand|/usr/lib/python2.7/dist-packages/numpy/random/mtrand.so
