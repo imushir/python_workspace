@@ -2,7 +2,7 @@
 <block>
   <name>plzr</name>
   <key>plzr_plzr</key>
-  <category>Internship_Plot</category>
+  <category>Pole-Zero</category>
   <import>import gnuradio.plzr</import>
   <make>gnuradio.plzr.plzr()
 self.$(id).set_parameters($n,$d)
@@ -19,15 +19,15 @@ self.$(id).set_parameters($n,$d)
     <value></value>
     <type>string</type>
   </param>
-  <sink>
+  <!--<sink>
     <name>in</name>
     <type>float</type>
-  </sink>
+  </sink>-->
 
-  <source>
+  <!--<source>
     <name>out</name>
     <type>float</type>
-  </source>
+  </source>-->
   <doc>
     Produces a pole-zero plot of the linear system.
   </doc>

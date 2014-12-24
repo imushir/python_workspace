@@ -1,0 +1,9 @@
+import time
+from threading import Thread
+
+class MyThread(Thread):
+    
+    def __init__(self,bignum):
+        
+        Thread.__init__(self)
+        self.bignum=bignum

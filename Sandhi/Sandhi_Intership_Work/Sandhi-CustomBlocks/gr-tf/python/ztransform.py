@@ -74,6 +74,7 @@ class ztransform(gras.Block):
          #print ans2
         ans = ans2 - ans1
         ans = ans/self.den_coeff[0]
+        print "Final Output : ", ans
      
     
         self.out_q.append(ans)
@@ -86,4 +87,5 @@ class ztransform(gras.Block):
         #self.final_q.append(ans)
         self.consume(0,1)
         self.produce(0,1)
+       
     

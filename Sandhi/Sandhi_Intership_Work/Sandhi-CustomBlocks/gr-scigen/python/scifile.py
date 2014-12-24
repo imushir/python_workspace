@@ -34,20 +34,22 @@ class scifile(gras.Block):
             out_sig=[numpy.float32])
 
     def set_parameters(self,path,window):
-	self.n = window
-	self.path = path
-	print self.path
+        self.n = window
+        self.path = path
+        print self.path
+       
+        
 
     def isIntegralWin(self, input_item, window):
-                if (len(input_item) % window ):
-                        raise Exception("Value of Window should be an integral value of length of input items")
+        if (len(input_item) % window ):
+            raise Exception("Value of Window should be an integral value of length of input items")
 
 
 
     def work(self, input_items, output_items):
+         import sciscipy 
+         out_eval_string = "exec('" + self.path + "', -1)"
+         sciscipy.eval(out_eval_string)
 
-   		import sciscipy 
-		
-                out_eval_string = "exec('" + self.path + "', -1)"
-                sciscipy.eval(out_eval_string)
-
+        
+  

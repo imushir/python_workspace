@@ -1,0 +1,7 @@
+import thread
+import time
+from threading import *
+class itemQ:
+    def __init__(self):
+        self.count = 0
+        

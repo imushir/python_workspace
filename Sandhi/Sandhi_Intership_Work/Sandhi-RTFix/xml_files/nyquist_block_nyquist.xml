@@ -2,9 +2,9 @@
 <block>
   <name>nyquist</name>
   <key>nyquist_block_nyquist</key>
-  <category>Internship_Plot</category>
-  <import>import gnuradio.nyquist</import>
-  <make>gnuradio.nyquist.nyquist()
+  <category>nyquist_block</category>
+  <import>import nyquist</import>
+  <make>nyquist.nyquist()
 self.$(id).set_parameters($a,$b,$c,$d)
 </make>
   <callback></callback>

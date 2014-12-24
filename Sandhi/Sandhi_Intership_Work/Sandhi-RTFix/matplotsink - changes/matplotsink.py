@@ -71,7 +71,6 @@ class DataGen(object):
             self.data += delta
         else:
             self.data += delta
-    
 
 
 
@@ -79,20 +78,22 @@ class matplotsink(wx.Panel):
   
     def __init__(self, parent, title, queue,gsz,zoom):
          wx.Panel.__init__(self, parent, wx.SIMPLE_BORDER)
-         self.gsz = gsz
+        
+	 self.gsz = gsz
          self.parent = parent
          self.title = title
          self.q = queue
-         self.zoom=zoom
+	 self.zoom=zoom
          self.paused = False
        
-         #self.create_menu()
-         #self.create_status_bar()
+#        self.create_menu()
+#        self.create_status_bar()
          self.create_main_panel()
 	 
 
     def create_menu(self):
         self.menubar = wx.MenuBar()
+        
         menu_file = wx.Menu()
         m_expt = menu_file.Append(-1, "&Save plot\tCtrl-S", "Save plot to file")
         self.Bind(wx.EVT_MENU, self.on_save_plot, m_expt)
@@ -100,9 +101,7 @@ class matplotsink(wx.Panel):
         m_exit = menu_file.Append(-1, "E&xit\tCtrl-X", "Exit")
         self.Bind(wx.EVT_MENU, self.on_exit, m_exit)
         self.menubar.Append(menu_file, "&File")
-        self.SetMenuBar(menuBar)
-        self.SetSizer(self.sizer)
-        self.Fit()
+        self.SetMenuBar(self.menubar)
 
 
     def create_main_panel(self):
@@ -110,26 +109,30 @@ class matplotsink(wx.Panel):
 
         self.init_plot()
         self.canvas = FigCanvas(self.panel, -1, self.fig)
-        self.scroll_range = 200000
-        self.canvas.SetScrollbar(wx.HORIZONTAL,0,5,self.scroll_range)
-        self.canvas.Bind(wx.EVT_SCROLLWIN,self.OnScrollEvt)
+	self.scroll_range = 400
+	self.canvas.SetScrollbar(wx.HORIZONTAL,0,5,self.scroll_range)
+	self.canvas.Bind(wx.EVT_SCROLLWIN,self.OnScrollEvt)
 	
         
         self.pause_button = wx.Button(self.panel, -1, "Pause")
         self.Bind(wx.EVT_BUTTON, self.on_pause_button, self.pause_button)
         self.Bind(wx.EVT_UPDATE_UI, self.on_update_pause_button, self.pause_button)
-     
-        self.cb_grid = wx.CheckBox(self.panel, -1, "Show Grid",style=wx.ALIGN_RIGHT)
+        
+        self.cb_grid = wx.CheckBox(self.panel, -1, 
+            "Show Grid",
+            style=wx.ALIGN_RIGHT)
         self.Bind(wx.EVT_CHECKBOX, self.on_cb_grid, self.cb_grid)
         self.cb_grid.SetValue(True)
         
-        self.cb_xlab = wx.CheckBox(self.panel, -1, "Show X labels",style=wx.ALIGN_RIGHT)
+        self.cb_xlab = wx.CheckBox(self.panel, -1, 
+            "Show X labels",
+            style=wx.ALIGN_RIGHT)
         self.Bind(wx.EVT_CHECKBOX, self.on_cb_xlab, self.cb_xlab)        
         self.cb_xlab.SetValue(True)
         
         self.hbox1 = wx.BoxSizer(wx.HORIZONTAL)
         self.hbox1.Add(self.pause_button, border=5, flag=wx.ALL | wx.ALIGN_CENTER_VERTICAL)
-        self.hbox1.AddSpacer(10)
+        self.hbox1.AddSpacer(20)
         self.hbox1.Add(self.cb_grid, border=5, flag=wx.ALL | wx.ALIGN_CENTER_VERTICAL)
         self.hbox1.AddSpacer(10)
         self.hbox1.Add(self.cb_xlab, border=5, flag=wx.ALL | wx.ALIGN_CENTER_VERTICAL)
@@ -141,36 +144,36 @@ class matplotsink(wx.Panel):
         
         self.panel.SetSizer(self.vbox)
         self.vbox.Fit(self)
-        self.ani=animation.FuncAnimation(self.fig,self.draw_plot,interval=100)
+	self.ani=animation.FuncAnimation(self.fig,self.draw_plot,interval=100)
     
     def OnScrollEvt(self,event):
-        self.i_start = event.GetPosition()
-        self.i_end =  self.i_window + event.GetPosition()
-        self.draw_plot(0)
+	self.i_start = event.GetPosition()
+	self.i_end =  self.i_window + event.GetPosition()
+	self.draw_plot(0)
 	
     def create_status_bar(self):
         self.statusbar = self.CreateStatusBar()
 
     def draw_test(self,event):
-        self.xar=np.arange(len(self.q.queue))
+	self.xar=np.arange(len(self.q.queue))
         self.yar=np.array(self.q.queue)
-        self.axes.plot(self.xar,self.yar)
+	self.axes.plot(self.xar,self.yar)
 
     def init_plot(self):
         self.dpi = 100
-        self.fig = Figure((3.0, 3.0), dpi=self.dpi)
+ 	self.fig = Figure((3.0, 3.0), dpi=self.dpi)
         self.fig.set_size_inches(7.0,4.0)
         self.fig.set_dpi(self.dpi)
+
         self.axes = self.fig.add_subplot(111)
         self.axes.set_axis_bgcolor('black')
         self.axes.set_title(self.title, size=12)
         
         pylab.setp(self.axes.get_xticklabels(), fontsize=8)
         pylab.setp(self.axes.get_yticklabels(), fontsize=8)
-        
-        self.i_window = self.gsz
-        self.i_start = 0
-        self.i_end = self.i_start + self.i_window
+	self.i_window = self.gsz
+	self.i_start = 0
+	self.i_end = self.i_start + self.i_window
         # plot the data as a line series, and save the reference 
         # to the plotted line series
         #
@@ -241,10 +244,11 @@ class matplotsink(wx.Panel):
     		 
     	         self.plot_data.set_xdata(np.arange(len(list(self.q.queue)))[self.i_start:self.i_end])
             	 self.plot_data.set_ydata(np.array(list(self.q.queue))[self.i_start:self.i_end])
-                 self.axes.set_xlim(min(np.arange(len(list(self.q.queue)))[self.i_start:self.i_end]),max(np.arange(len(list(self.q.queue)))[self.i_start:self.i_end]))
+    		 self.axes.set_xlim(min(np.arange(len(list(self.q.queue)))[self.i_start:self.i_end]),max(np.arange(len(list(self.q.queue)))[self.i_start:self.i_end]))
     #		 if self.zoom:
-                 self.axes.set_ylim(min(np.array(list(self.q.queue))),max(np.array(list(self.q.queue))))
-                 self.canvas.draw()
+    	  	 self.axes.set_ylim(min(np.array(list(self.q.queue))),max(np.array(list(self.q.queue))))
+    		 
+    		 self.canvas.draw()
 
 
     

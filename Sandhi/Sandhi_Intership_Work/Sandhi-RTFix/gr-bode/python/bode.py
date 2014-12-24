@@ -22,7 +22,7 @@ import wx
 import numpy
 from gnuradio import gr
 import sciscipy
-#from scipy import signal
+from scipy import signal
 import numpy as np
 import matplotlib.pyplot as plt
 

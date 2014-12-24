@@ -1,0 +1,16 @@
+import time
+from threading import Thread
+
+class MyThread(Thread):
+    
+    def __init__(self,bignum):
+        
+        Thread.__init__(self)
+        self.bignum=bignum
+        
+    def run(self):
+        for l in range(10):
+            for k in range(self.bignum):
+                res = 0
+                for i in range(self.bignum):
+                    

@@ -10,16 +10,20 @@ from scipy.signal import lti, step, impulse
 #num = [6.3223, 18, 12.811] 
 #den = [1, 6, 11.3223, 18, 12.811]
 
-num = [6] 
-den = [1,5,6]
+num = [11] 
+den = [1,10,11]
  
 tf = lti(num, den)
  
 # get t = time, s = unit-step response
 t, s = step(tf)
+
  
 # recalculate t and s to get smooth plot
 t, s = step(tf, T = linspace(min(t), t[-1], 500))
+
+print "Time",t
+print "YEs",s
  
 # get i = impulse
 #t, i = impulse(tf, T = linspace(min(t), t[-1], 500))

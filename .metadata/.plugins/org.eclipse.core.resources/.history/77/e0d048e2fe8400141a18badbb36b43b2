@@ -1,0 +1,8 @@
+import thread
+import time
+from threading import *
+import Queue
+
+class Producer(Thread):
+    
+    def __init__(self,itemq):

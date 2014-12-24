@@ -26,7 +26,7 @@ self.$(id).set_parameters($path, $window)
     </param>
     <param>
         <name>Choose .sci File</name>
-	<key>file</key>
+	<key>path</key>
 	<value></value>
 	<type>file_open</type>
     </param>
@@ -47,9 +47,9 @@ self.$(id).set_parameters($path, $window)
  
     <param>
     	<name>Window</name>
-	<key>window</key>
-	<value>1</value>
-	<type>int</type>
+	    <key>window</key>
+	    <value>1</value>
+	    <type>int</type>
     </param>
     
     <!--<param>

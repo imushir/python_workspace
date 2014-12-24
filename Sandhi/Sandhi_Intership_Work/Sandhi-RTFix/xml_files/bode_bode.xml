@@ -3,18 +3,18 @@
   <name>bode</name>
   <key>bode_bode</key>
   <category>Internship_Plot</category>
-  <import>import gnuradio.bode</import>
-  <make>gnuradio.bode.bode()
-self.$(id).set_parameters($a,$b)
+  <import>import bode</import>
+  <make>#set $parent = $notebook() and 'self.%s.GetPage(%s)'%$notebook()
+bode.bode()self.$(id).set_parameters($a,$b)
 </make>
   <param>
-    <name>Enter numerator of Tf</name>
+    <name>Eumerator Value</name>
     <key>a</key>
     <value></value>
     <type>string</type>
   </param>
   <param>
-    <name>Enter denominator of Tf</name>
+    <name>Denominator Value</name>
     <key>b</key>
     <value></value>
     <type>string</type>
@@ -32,6 +32,12 @@ self.$(id).set_parameters($a,$b)
     <type>string</type>
   </param> -->
 <!--
+  <param>
+        <name>Notebook</name>
+        <key>notebook</key>
+        <value></value>
+        <type>notebook</type>
+  </param>
   <sink>
     <name>in</name>
     <type>float</type>
@@ -44,8 +50,8 @@ self.$(id).set_parameters($a,$b)
   <doc>
 	Computes the bode plot i.e. the magnitude and phase of the frquency response of the given trasnfer function.
 	
-	Example: Numerator of Transfer Function(Tf) - s**2+2*0.9*10*s+100
-		 Denominator of Transfer Function(Tf) - s**2+2*0.3*10.1*s+102.01
+	Example: Numerator - s^2+2*0.9*10*s+100
+		 Denominator - s^2+2*0.3*10.1*s+102.01
 
   </doc>
 </block>

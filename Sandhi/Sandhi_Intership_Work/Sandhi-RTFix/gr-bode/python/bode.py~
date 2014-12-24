@@ -18,34 +18,24 @@
 # Boston, MA 02110-1301, USA.
 # 
 
-import wx
 import numpy
 from gnuradio import gr
-import sciscipy
-#from scipy import signal
-import numpy as np
-import matplotlib.pyplot as plt
 
 class bode(gr.sync_block):
     """
-    magnitude and phase of the frequency
-    response of a given transfer function
+    docstring for block bode
     """
     def __init__(self):
         gr.sync_block.__init__(self,
             name="bode",
-            in_sig=[numpy.float32],
-            out_sig=[numpy.float])
+            in_sig=[<+numpy.float+>],
+            out_sig=[<+numpy.float+>])
 
-    def set_parameters(self,a,b):
-	self.a=a
-	self.b=b
-	self.nplot()
-
-    def nplot(self):
-	inp = "s=poly(0,'s');h=syslin('c',("+self.a+")/("+self.b+"));clf();bode(h,0.1,100)"
-	sciscipy.eval(inp)
 
     def work(self, input_items, output_items):
-        #Leave this unimplemented
-	return len(output_items[0])
+        in0 = input_items[0]
+        out = output_items[0]
+        # <+signal processing here+>
+        out[:] = in0
+        return len(output_items[0])
+

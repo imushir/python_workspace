@@ -1,0 +1,6 @@
+import thread
+import time
+from threading import *
+import Queue
+
+class Producer(Thread):

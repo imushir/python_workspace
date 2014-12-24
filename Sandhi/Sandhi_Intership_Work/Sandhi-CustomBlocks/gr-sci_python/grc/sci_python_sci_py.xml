@@ -5,8 +5,7 @@
   <category>Intership</category>
   <import>import gnuradio.sci_py</import>
   <make>gnuradio.sci_py.sci_py()
-self.$(id).set_parameters($path,$window,$var_name)
-  </make>
+self.$(id).set_parameters($path,$window,$var_name)</make>
   <!-- Make one 'param' node for every Parameter you want settable from the GUI.
        Sub-nodes:
        * name
@@ -20,8 +19,8 @@ self.$(id).set_parameters($path,$window,$var_name)
   </param>-->
   <param>
       <name>Choose .sci File</name>
-      <key>file</key>
-      <value></value>
+      <key>path</key>
+      <value>""</value>
       <type>file_open</type>
   </param>
   <param>

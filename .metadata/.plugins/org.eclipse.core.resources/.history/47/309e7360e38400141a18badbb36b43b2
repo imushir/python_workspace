@@ -1,0 +1,25 @@
+import time
+from threading import Thread
+class MyThread(Thread):
+    def __init__(self,bignum):
+        Thread.__init__(self)
+        self.bignum=bignum
+    def run(self):
+        for l in range(10):
+            for k in range(self.bignum):
+                res = 0
+                print "Res 0 ",res
+                for i in range(self.bignum):
+                    res+=1
+                print "Res 1 ",res
+    
+def myadd_nothread(bignum):
+    for l in range(10):
+        for k in range(bignum):
+            res=0
+            for i in range(bignum):
+                res+=1
+    for l in  range(10):
+        for k in range(bignum):
+            
+            

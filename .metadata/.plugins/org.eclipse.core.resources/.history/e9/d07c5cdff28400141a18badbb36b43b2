@@ -1,0 +1,11 @@
+import thread
+import time
+from threading import *
+
+def event_set(event):
+    time.sleep(2)
+    
+    while 1:
+        #We wait for the flag to be set.
+        while not event.isSet():
+            

@@ -29,22 +29,23 @@ class power(gras.Block):
     def __init__(self):
         gras.Block.__init__(self,
             name="power",
-            in_sig=[numpy.float32,numpy.float32],
+            in_sig=[numpy.float32],
             out_sig=[numpy.float32])
 
 
     def work(self, input_items, output_items):
-        
-	in0 = input_items[0]
-	in1 = input_items[1]
+        in0 = input_items[0]
+        #in1 = input_items[1]
         out = output_items[0]
         # <+signal processing here+>
-        #out[:1] = pow(in0[:1],in1[:1])
-	out[:1]=in0[:1]**in1[:1]
+        out[:1] = pow(in0[:1],in1[:1])
+        #out[:1]=in0[:1]**in1[:1]
+        #out[:1] = in0[:1]
+        print out
         #pow(x, y) = exp(y*ln(x))
         #out[:1] = exp(in1[:1]*log10(in0[:1]))
-	self.consume(0,1)
-	self.consume(1,1)
-	self.produce(0,1)
+        self.consume(0,1)
+        #self.consume(1,1)
+        self.produce(0,1)
         #return len(output_items[0])
 
