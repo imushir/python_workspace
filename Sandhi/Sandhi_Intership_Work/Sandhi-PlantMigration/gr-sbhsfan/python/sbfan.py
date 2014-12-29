@@ -22,9 +22,12 @@ import gras
 import numpy
 import serial
 import time
+import sys
+import wx
 from sbhs import *
 from scan_machines import *
 import IN
+from gnuradio.wxgui import slider
 
 class sbfan(gras.Block):
     
@@ -32,6 +35,9 @@ class sbfan(gras.Block):
         self.n = window
         self.fan = fan_value
         self.heat = heat_value
+        #self.set_fan_heat(self.fan,self.heat)
+        #self.fan1 = 0
+        #self.heat1 = 0
         
         gras.Block.__init__(self,
             name="sbfan",
@@ -48,17 +54,11 @@ class sbfan(gras.Block):
     def set_fan_heat(self,fan_value,heat_value):
         self.fan = fan_value
         self.heat = heat_value
-        self.new_device.setFan(self.fan)
-        self.new_device.setHeat(self.heat)
-    
-    
+        #self.new_device.setFan(self.fan)
+        #self.new_device.setHeat(self.heat)
+        return (self.fan,self.heat)
 
-    #def set_parameters(self,window,fan_value,heat_value):
-     #   self.n = window
-      #  self.fan = fan_value
-       # self.heat = heat_value
-
-
+ 
     def isIntegralWin(self,input_item,window):
 	
 	if(len(input_item) % window):
@@ -75,20 +75,42 @@ class sbfan(gras.Block):
 			#self.new_device.setHeat(0)
 		#else: 
 		#	self.new_device.setHeat(heat_items)
-        in0 = []
-        in1 = []
-        in0 = input_items[0]
-        print "Input Zero : ",in0
-        in1 = input_items[1]
-        print "Input One : ",in1
+        #in0 = []
+        #in1 = []
+        
         out = output_items[0]
-        time.sleep(0.5)
-        self.new_device.setFan(self.fan)
-        #self.new_device.setFan(in0[0])
-        time.sleep(0.5)
-        self.new_device.setHeat(self.heat)
-        #self.new_device.setFan(in1[1])
-        time.sleep(0.5)
+        in0 = input_items[0][0]
+        print "Input Zero : ",in0
+        in1 = input_items[1][0]
+        print "Input One : ",in1
+        self.new_device.setFan(in0)
+        self.new_device.setHeat(in1)
+        
+        
+        print "INPUT_LENGTH",len(input_items)
+        """
+        for i in range(0,len(input_items)-1):
+            print " I ",i
+            in0 = input_items[i][0]
+            print "IN0 :",in0
+            self.new_device.setFan(in0)
+           
+        for i in range(1,len(input_items)):
+            print " I ",i
+            in1 = input_items[i][0]
+            print "IN1 :",in1
+            self.new_device.setHeat(in1)
+        """   
+        time.sleep(0.4)
+
+        #self.set_fan_heat(self.fan,self.heat)
+        #new_fan,new_heat = self.set_fan_heat(in0,in1)
+        #self.new_device.setFan(self.fan)
+        #self.new_device.setFan(new_fan)
+        #time.sleep(0.5)
+        #self.new_device.setHeat(self.heat)
+        #self.new_device.setHeat(new_heat)
+        #time.sleep(0.5)
    
         #For zero Temperatures
         if not self.new_device.getTemp():
@@ -103,8 +125,9 @@ class sbfan(gras.Block):
         #print "temperature:" ,out  
 	
         #self.consume(0,1) #consume from port 0
-        self.consume(0,1)
-        self.consume(1,1)
+        for i in range(0,len(input_items)):
+            self.consume(0,1)
+            self.consume(1,1)
         self.produce(0,1)
         
         

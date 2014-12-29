@@ -1,0 +1,24 @@
+import threading
+class FetchUrls(threading.Thread):
+    """
+    Thread checking URLS
+    """
+    def __init__(self,urls,output):
+        """
+        Contructor
+        @param urls list of urls to check
+        @param output file to write urls output
+        """
+        threading.Thread.__init__(self)  
+    
+    def run(self):
+        while self.urls:
+            self.lock.acquire()
+            print 'lock acquired by %s' %self.name
+            self.output.write(d.read())
+            print 'write done by %s'%self.name
+            print 'lock released by %s' %self.name
+            self.lock.release()
+def main():
+    
+    

@@ -1,8 +1,5 @@
-INSTUPDemos.backup_ver1
-/home/mushirahmed/python_workspace/Python_Examples/Demos/backup_ver1.py
-INFOS:&&3|1|2|0&&3|3|2|0&&3|4|2|0&&3|5|2|0
-zip_command=5
-source=1
-target=4
-Demos.backup_ver1=2
-target_dir=3
+INSTUPDemos.Threading_Fetch_URl.main
+/home/mushirahmed/python_workspace/Python_Examples/Demos/Threading_Fetch_URl/main.py
+INFOS:&&2|1|2|0
+Demos.Threading_Fetch_URl.main=2
+main=1

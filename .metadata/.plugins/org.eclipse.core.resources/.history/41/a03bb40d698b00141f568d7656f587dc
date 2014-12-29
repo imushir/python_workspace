@@ -1,0 +1,8 @@
+import threading
+class FetchUrls(threading.Thread):
+    def __init__(self,urls,output,lock):
+        self.lock = lock
+    def run(self):
+        while self.urls:
+            
+    

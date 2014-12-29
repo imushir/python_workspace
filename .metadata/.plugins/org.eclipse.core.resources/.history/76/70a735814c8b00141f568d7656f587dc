@@ -1,0 +1,7 @@
+import sys
+
+for arg in sys.argv:
+        self.heat = arg[0]
+        self.fan = arg[1]
+        print "Heat : ",self.heat
+        print "Fan : ",self.fan

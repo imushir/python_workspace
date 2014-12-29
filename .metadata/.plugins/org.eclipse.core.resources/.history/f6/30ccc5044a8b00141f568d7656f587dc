@@ -1,0 +1,7 @@
+import sys
+class command:
+
+def get_heat_fan:
+    
+for arg in sys.argv:
+    print arg

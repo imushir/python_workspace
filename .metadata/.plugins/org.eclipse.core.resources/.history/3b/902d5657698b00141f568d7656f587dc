@@ -1,0 +1,10 @@
+import threading
+class FetchUrls(threading.Thread):
+    def __init__(self,urls,output,lock):
+        self.lock = lock
+    def run(self):
+        while self.urls:
+            self.lock.acquire()
+            print 'lock acquired by %s' %self.name
+            self.output.write(d.read())
+    

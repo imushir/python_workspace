@@ -1,0 +1,10 @@
+import traceback
+import sys
+from traceback_example import produce_exception
+print 'print_exc() with no exception :'
+traceback.print_exc(file=sys.stdout,)
+print 
+try:
+    produce_exception()
+except Exception,err:
+    print 'print_exc():'

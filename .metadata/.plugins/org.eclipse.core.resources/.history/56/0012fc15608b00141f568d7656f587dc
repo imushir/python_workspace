@@ -1,0 +1,4 @@
+import traceback
+import sys
+from traceback_example import produce_exception
+print 'print_exc() with no exception :'

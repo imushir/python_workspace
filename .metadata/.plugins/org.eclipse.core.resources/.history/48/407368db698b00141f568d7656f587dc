@@ -1,0 +1,18 @@
+import threading
+class FetchUrls(threading.Thread):
+    """
+    Thread checking URLS
+    """
+    def __init__(self,urls,output,lock):
+        self.lock = lock
+    def run(self):
+        while self.urls:
+            self.lock.acquire()
+            print 'lock acquired by %s' %self.name
+            self.output.write(d.read())
+            print 'write done by %s'%self.name
+            print 'lock released by %s' %self.name
+            self.lock.release()
+def main():
+    
+    
