@@ -79,16 +79,16 @@ class sbfan(gras.Block):
         #in1 = []
         
         out = output_items[0]
-        print "INPUT_LENGTH",len(input_items)
-        in0 = input_items[0][0]
-        print "Input Zero : ",in0
-        in1 = input_items[1][0]
-        print "Input One : ",in1
-        self.new_device.setFan(in0)
-        self.new_device.setHeat(in1)
-
+        for i in range(0,len(input_items)):
+            in0 = input_items[0][0]
+            print "Input Zero : ",in0
+            in1 = input_items[1][0]
+            print "Input One : ",in1
+            self.new_device.setFan(in0)
+            self.new_device.setHeat(in1)
         
-       
+        
+        print "INPUT_LENGTH",len(input_items)
         """
         for i in range(0,len(input_items)-1):
             print " I ",i
@@ -126,8 +126,9 @@ class sbfan(gras.Block):
         #print "temperature:" ,out  
 	
         #self.consume(0,1) #consume from port 0
-        self.consume(0,1)
-        self.consume(1,1)
+        for i in range(0,len(input_items)):
+            self.consume(0,1)
+            self.consume(1,1)
         self.produce(0,1)
         
         
